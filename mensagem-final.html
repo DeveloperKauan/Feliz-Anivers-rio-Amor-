@@ -43,7 +43,6 @@
       opacity: 0.7;
     }
 
-    /* Diferentes tempos e direções para o efeito de flutuação dos corações */
     .heart:nth-child(odd) {
       animation-duration: 3.5s;
     }
@@ -95,15 +94,15 @@
     .intro-text {
       font-size: 1.4rem;
       margin-bottom: 40px;
-      color: #000; /* Trocar o texto para preto para melhorar o contraste */
-      background: rgba(255, 255, 255, 0.7); /* Fundo branco semi-transparente */
+      color: #000;
+      background: rgba(255, 255, 255, 0.7);
       padding: 20px;
       border-radius: 10px;
       position: relative;
       line-height: 1.8;
       max-width: 900px;
       margin: 50px auto;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra sutil para destacar */
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     /* Estilo para o vídeo e responsividade */
@@ -129,7 +128,7 @@
       display: block;
     }
 
-    /* Estilo para o contador de dias */
+    /* Estilo para o contador de namoro detalhado */
     .counter-container {
       margin-top: 50px;
       font-size: 2rem;
@@ -143,6 +142,23 @@
       animation: float 3s ease-in-out infinite;
       opacity: 0.7;
       display: inline-block;
+    }
+
+    .counter-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .counter-item {
+      font-size: 1.5rem;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -179,23 +195,49 @@
     </p>
   </div>
 
-  <!-- Contador de dias de namoro -->
-  <div class="counter-container">
-    <div class="counter-heart">❤️</div>
-    <span id="days-count">0</span> dias de amor
-    <div class="counter-heart">❤️</div>
+  <!-- Contador de namoro detalhado -->
+  <div class="counter-container" data-aos="fade-up">
+    <div class="counter-section">
+      <span class="counter-heart">❤️</span>
+      <div id="months-days" class="counter-item">0 meses e 0 dias</div>
+      <span class="counter-heart">❤️</span>
+    </div>
+
+    <div class="counter-section">
+      <span class="counter-heart">❤️</span>
+      <div id="days" class="counter-item">0 dias</div>
+      <span class="counter-heart">❤️</span>
+    </div>
+
+    <div class="counter-section">
+      <span class="counter-heart">❤️</span>
+      <div id="hours" class="counter-item">0 horas</div>
+      <span class="counter-heart">❤️</span>
+    </div>
+
+    <div class="counter-section">
+      <span class="counter-heart">❤️</span>
+      <div id="minutes" class="counter-item">0 minutos</div>
+      <span class="counter-heart">❤️</span>
+    </div>
+
+    <div class="counter-section">
+      <span class="counter-heart">❤️</span>
+      <div id="seconds" class="counter-item">0 segundos</div>
+      <span class="counter-heart">❤️</span>
+    </div>
   </div>
 
   <!-- Poema -->
   <div class="container" data-aos="fade-up">
     <h1>Dessa vez não tem poema</h1>
     <p>
-      Me desculpa, amor<br>
+      Me desculpa,amor<br>
       Dessa vez não tem poesia<br>
       Dessa vez não quero que tenha dor<br>
       Dessa vez não vou dizer minha ânsia<br>
 
-      Me desculpa, amor<br>
+      Me desculpa,amor<br>
       Dessa vez só tem um eu te amo<br>
       Vou economizar nas palavras<br>
       Pra poupar as balbúrdias<br>
@@ -221,7 +263,6 @@
     <div class="video-legend">O primeiro vídeo que gravamos juntos, e eu sempre fico feliz quando vejo</div>
   </div>
 
-  
   <!-- Footer -->
   <footer>
     <p>Com todo o amor, de Kauan Yuri</p>
@@ -231,7 +272,36 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();
+
+    // Função para calcular o tempo de namoro
+    function calculateTime() {
+      const startDate = new Date("2023-06-12T00:00:00");
+      const now = new Date();
+
+      const totalSeconds = Math.floor((now - startDate) / 1000);
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const totalHours = Math.floor(totalMinutes / 60);
+      const totalDays = Math.floor(totalHours / 24);
+
+      // Cálculo de meses e dias
+      let months = now.getMonth() - startDate.getMonth() + (12 * (now.getFullYear() - startDate.getFullYear()));
+      let days = now.getDate() - startDate.getDate();
+      if (days < 0) {
+        months--;
+        const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += lastMonth.getDate();
+      }
+
+      // Atualiza o contador no HTML
+      document.getElementById("months-days").textContent = `${months} meses e ${days} dias`;
+      document.getElementById("days").textContent = `${totalDays} dias`;
+      document.getElementById("hours").textContent = `${totalHours} horas`;
+      document.getElementById("minutes").textContent = `${totalMinutes} minutos`;
+      document.getElementById("seconds").textContent = `${totalSeconds} segundos`;
+    }
+
+    // Atualiza o contador a cada segundo
+    setInterval(calculateTime, 1000);
   </script>
 </body>
 </html>
-
