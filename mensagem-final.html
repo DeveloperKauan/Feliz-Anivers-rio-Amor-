@@ -105,6 +105,24 @@
       max-width: 900px;
       margin: 50px auto;
     }
+      /* Estilo para o vídeo */
+    video {
+      max-width: 100%;
+      margin: 20px auto;
+      display: block;
+      position: relative;
+    }
+
+    .video-legend {
+      font-size: 1.2rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+      margin-top: 10px;
+      text-align: center;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -164,6 +182,15 @@
       Ao meu lado quero que sorria<br>
       Se solte, solta tudo! Não precisa ser tão fria<br>
     </p>
+  </div>
+
+  <!-- Vídeo especial -->
+    <div class="container" data-aos="fade-up">
+    <video controls>
+      <source src="balanco.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos.
+    </video>
+    <div class="video-legend">O primeiro vídeo que gravamos juntos, e eu sempre fico feliz quando vejo</div>
   </div>
 
   <!-- Footer -->
