@@ -92,27 +92,30 @@
       }
     }
 
- .intro-text {
-  font-size: 1.4rem;
-  margin-bottom: 40px;
-  color: #000; /* Trocar o texto para preto para melhorar o contraste */
-  background: rgba(255, 255, 255, 0.7); /* Fundo branco semi-transparente */
-  padding: 20px;
-  border-radius: 10px;
-  position: relative;
-  line-height: 1.8;
-  max-width: 900px;
-  margin: 50px auto;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra sutil para destacar */
-}
-
-    }
-      /* Estilo para o vídeo */
-    video {
-      max-width: 100%;
-      margin: 20px auto;
-      display: block;
+    .intro-text {
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      color: #000; /* Trocar o texto para preto para melhorar o contraste */
+      background: rgba(255, 255, 255, 0.7); /* Fundo branco semi-transparente */
+      padding: 20px;
+      border-radius: 10px;
       position: relative;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 50px auto;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra sutil para destacar */
+    }
+
+    /* Estilo para o vídeo e responsividade */
+    .video-container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
     }
 
     .video-legend {
@@ -164,18 +167,17 @@
   <div class="container" data-aos="fade-up">
     <h1>Dessa vez não tem poema</h1>
     <p>
-      Me desculpa,amor<br>
+      Me desculpa, amor<br>
       Dessa vez não tem poesia<br>
       Dessa vez não quero que tenha dor<br>
       Dessa vez não vou dizer minha ânsia<br>
 
-      Me desculpa,amor<br>
+      Me desculpa, amor<br>
       Dessa vez só tem um eu te amo<br>
       Vou economizar nas palavras<br>
       Pra poupar as balbúrdias<br>
       Fez 18 anos, é brava e que msm assim tenha mtos e mtos dias<br>
 
-      Sinto a presença da sua paixão.<br>
       Teus olhos brilham como a lua,<br>
       Tu me mostrou o que é não ter solidão<br>
       E o amor que sinto só continua.<br>
@@ -184,16 +186,11 @@
       Meu mundo inteiro se transforma, e lá<br>
       Vejo o futuro que sempre sonhei,<br>
       Ao seu lado, onde sempre estarei.<br>
-
-      Vejo o futuro que sonhei<br>
-      Ao seu lado, sempre sorrirei<br>
-      Ao meu lado quero que sorria<br>
-      Se solte, solta tudo! Não precisa ser tão fria<br>
     </p>
   </div>
 
   <!-- Vídeo especial -->
-    <div class="container" data-aos="fade-up">
+  <div class="container video-container" data-aos="fade-up">
     <video controls>
       <source src="balanco.mp4" type="video/mp4">
       Seu navegador não suporta vídeos.
