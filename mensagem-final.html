@@ -1,1 +1,164 @@
-<h1>Aguarde...</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poema Especial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #fbc2eb, #a18cd1);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .container {
+      padding: 50px;
+      margin-top: 100px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+
+    .heart {
+      font-size: 2rem;
+      color: #ff6b6b;
+      animation: float 3s ease-in-out infinite;
+      position: absolute;
+      opacity: 0.7;
+    }
+
+    /* Diferentes tempos e direções para o efeito de flutuação dos corações */
+    .heart:nth-child(odd) {
+      animation-duration: 3.5s;
+    }
+
+    .heart:nth-child(even) {
+      animation-duration: 4s;
+    }
+
+    .heart-animation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Novo estilo para a mensagem */
+    .intro-text {
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 50px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Corações em volta -->
+  <div class="heart-animation">
+    <i class="fas fa-heart heart" style="top: 10%; left: 10%;"></i>
+    <i class="fas fa-heart heart" style="top: 20%; left: 30%;"></i>
+    <i class="fas fa-heart heart" style="top: 30%; left: 50%;"></i>
+    <i class="fas fa-heart heart" style="top: 40%; left: 70%;"></i>
+    <i class="fas fa-heart heart" style="top: 50%; left: 90%;"></i>
+    <i class="fas fa-heart heart" style="top: 60%; left: 20%;"></i>
+    <i class="fas fa-heart heart" style="top: 70%; left: 40%;"></i>
+    <i class="fas fa-heart heart" style="top: 80%; left: 60%;"></i>
+    <i class="fas fa-heart heart" style="top: 90%; left: 80%;"></i>
+    <i class="fas fa-heart heart" style="top: 50%; left: 10%;"></i>
+    <i class="fas fa-heart heart" style="top: 60%; left: 30%;"></i>
+    <i class="fas fa-heart heart" style="top: 70%; left: 50%;"></i>
+    <i class="fas fa-heart heart" style="top: 80%; left: 70%;"></i>
+    <i class="fas fa-heart heart" style="top: 90%; left: 90%;"></i>
+  </div>
+
+  <!-- Mensagem inicial -->
+  <div class="container intro-text" data-aos="fade-up">
+    <p>
+      Sabe, a gente tem passado por momentos difíceis, e eu pensei que talvez nem estivesse te mostrando isso agora. Este final, eu havia deixado para ajeitar depois, mas acabamos quase nos separando. Mesmo com tudo que estamos enfrentando, quero que você saiba que te amo muito. Eu sempre vou estar aqui para você, não apenas como seu parceiro, mas como seu melhor amigo. Quero que você nunca tenha dúvida do quanto eu me importo e do quanto eu te amo. Meu coração é seu, sempre foi, e eu quero que saiba que estarei ao seu lado, hoje e sempre.
+    </p>
+  </div>
+
+  <!-- Poema -->
+  <div class="container" data-aos="fade-up">
+    <h1>Poema de Amor</h1>
+    <p>
+      Em cada batida do meu coração,<br>
+      Sinto a presença da sua paixão.<br>
+      Teus olhos brilham como a lua,<br>
+      E o amor que sinto só continua.<br>
+      <br>
+      Em cada sorriso que você me dá,<br>
+      Meu mundo inteiro se transforma, e lá<br>
+      Vejo o futuro que sempre sonhei,<br>
+      Ao seu lado, onde sempre estarei.<br>
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Com todo o amor, de Kauan Yuri</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
