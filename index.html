@@ -81,7 +81,7 @@
     }
 
     .gallery p {
-      background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para facilitar a leitura */
+      background: rgba(0, 0, 0, 0.5);
       padding: 10px;
       border-radius: 10px;
       font-size: 1.2rem;
@@ -90,11 +90,40 @@
       position: relative;
     }
 
-    .message {
-      font-size: 1.2rem;
-      margin: 20px 0;
-      line-height: 1.5;
+    .declaration {
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      color: #000;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 10px;
       position: relative;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 50px auto;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-container {
+      max-width: 720px;
+      margin: 0 auto 30px;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .video-legend {
+      font-size: 1.2rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+      margin-top: 10px;
+      text-align: center;
+      display: block;
     }
 
     .btn-surprise {
@@ -110,34 +139,6 @@
     .btn-surprise:hover {
       background-color: #d45d5d;
     }
-
-  .declaration {
-  font-size: 1.4rem;
-  margin-bottom: 40px;
-  color: #000; /* Trocar o texto para preto para melhorar o contraste */
-  background: rgba(255, 255, 255, 0.7); /* Fundo branco semi-transparente */
-  padding: 20px;
-  border-radius: 10px;
-  position: relative;
-  line-height: 1.8;
-  max-width: 900px;
-  margin: 50px auto;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra sutil para destacar */
-}
-
-    }
-
-  .video-legend {
-  font-size: 1.2rem;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 10px;
-  color: #fff;
-  margin-top: 10px; /* Ajuste de margem para espaçar do vídeo */
-  text-align: center; /* Centraliza o texto da legenda */
-  display: block; /* Garante que a legenda fique logo abaixo do vídeo */
-}
-
 
     footer {
       margin-top: 50px;
@@ -156,6 +157,10 @@
 
       .declaration {
         font-size: 1rem;
+      }
+
+      .video-container {
+        max-width: 100%;
       }
     }
   </style>
@@ -189,8 +194,8 @@
       <p>Hoje, no seu aniversário, quero te dizer o quanto você significa para mim. Desde o primeiro momento que te conheci, você iluminou minha vida de uma maneira que nunca imaginei ser possível. Cada sorriso seu, cada olhar, cada abraço me faz sentir o homem mais sortudo do mundo. Esta surpresa é apenas uma bobagemzinha pra te mostrar o quanto te amo e aprecio cada momento ao seu lado.</p>
       <p>É meio estranho pensar que você ta fazendo 18 anos, te conheci com 13<p>
       <p>É meio engraçado pensar que aquela garotinha virou esse mulherão, eu realmente sou muito apaixonado por você e to feliz de você estar completando mais um ano, quero viver mais 18, ou 36 e tantos mais anos com você.</p>
-      </p>Muito obrigado por existir na minha vida, muito obrigado por tudo, obrigado por estar comigo, obrigado por não desistir de mim.
-      </p>Você é uma pessoa extremamente importante pra mim e quero que saiba disso!</p>
+      <p>Muito obrigado por existir na minha vida, muito obrigado por tudo, obrigado por estar comigo, obrigado por não desistir de mim.</p>
+      <p>Você é uma pessoa extremamente importante pra mim e quero que saiba disso!</p>
       <p>Com todo o meu amor,</p>
       <p>O teco do seu tico</p>
     </div>
@@ -212,27 +217,30 @@
     <i class="fas fa-heart heart" style="top: 0; left: 50%;"></i>
   </div>
 
-
-  <div class="container" data-aos="fade-up">
+  <!-- Vídeos em uma div -->
+  <div class="container video-container" data-aos="fade-up">
     <h2>Momentos felizes que gravamos</h2>
-    <video controls>
-      <source src="video.mp4" type="video/mp4">
-      Seu navegador não suporta vídeos.
-    </video>
-    <div class="video-legend">KKKKKKKKKKKKKKKKKKKKKKKkk</div>
-       
-    <video controls>
-      <source src="onibus.mp4" type="video/mp4">
-      Seu navegador não suporta vídeos.
-    </video>
-    <div class="video-legend">Esse vídeo é muito especial</div>
-        
-    <video controls>
-      <source src="shopping.mp4" type="video/mp4">
-      Seu navegador não suporta vídeos.
-    </video>
-       
-    <div class="video-legend">Eu falando bobagem e vc querendo me bater</div>
+    <div class="video-container">
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+      <div class="video-legend">KKKKKKKKKKKKKKKKKKKKKKKkk</div>
+    </div>
+    <div class="video-container">
+      <video controls>
+        <source src="onibus.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+      <div class="video-legend">Esse vídeo é muito especial</div>
+    </div>
+    <div class="video-container">
+      <video controls>
+        <source src="shopping.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+      <div class="video-legend">Eu falando bobagem e vc querendo me bater</div>
+    </div>
     <i class="fas fa-heart heart" style="top: 0; left: 40%;"></i>
   </div>
 
