@@ -105,30 +105,7 @@
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     }
 
-    /* Estilo para o vídeo e responsividade */
-    .video-container {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    video {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .video-legend {
-      font-size: 1.2rem;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px;
-      border-radius: 10px;
-      color: #fff;
-      margin-top: 10px;
-      text-align: center;
-      display: block;
-    }
-
-    /* Estilo para o contador de namoro detalhado */
+    /* Estilo para o contador romântico */
     .counter-container {
       margin-top: 50px;
       font-size: 2rem;
@@ -160,9 +137,26 @@
       border-radius: 8px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     }
+
+    /* Estilo para o contador de vida da Julia */
+    .life-counter {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-size: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      color: #ff6b6b;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Contador de tempo de vida da Julia -->
+  <div class="life-counter" id="life-counter">0 anos, 0 meses e 0 dias</div>
 
   <!-- Musica -->
   <audio id="romantic-audio" loop autoplay>
@@ -195,11 +189,11 @@
     </p>
   </div>
 
-  <!-- Contador de namoro detalhado -->
+  <!-- Contador romântico detalhado -->
   <div class="counter-container" data-aos="fade-up">
     <div class="counter-section">
       <span class="counter-heart">❤️</span>
-      <div id="months-days" class="counter-item">0 meses e 0 dias</div>
+      <div id="years-months" class="counter-item">0 anos e 0 meses</div>
       <span class="counter-heart">❤️</span>
     </div>
 
@@ -273,8 +267,30 @@
   <script>
     AOS.init();
 
+    // Função para calcular o tempo de vida da Julia
+    function calculateLifeTime() {
+      const birthDate = new Date("2006-09-19T00:00:00");
+      const now = new Date();
+
+      let years = now.getFullYear() - birthDate.getFullYear();
+      let months = now.getMonth() - birthDate.getMonth();
+      let days = now.getDate() - birthDate.getDate();
+
+      if (days < 0) {
+        months--;
+        const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += lastMonth.getDate();
+      }
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      document.getElementById("life-counter").textContent = `${years} anos, ${months} meses e ${days} dias`;
+    }
+
     // Função para calcular o tempo de namoro
-    function calculateTime() {
+    function calculateLoveTime() {
       const startDate = new Date("2023-06-12T00:00:00");
       const now = new Date();
 
@@ -283,25 +299,32 @@
       const totalHours = Math.floor(totalMinutes / 60);
       const totalDays = Math.floor(totalHours / 24);
 
-      // Cálculo de meses e dias
-      let months = now.getMonth() - startDate.getMonth() + (12 * (now.getFullYear() - startDate.getFullYear()));
+      let years = now.getFullYear() - startDate.getFullYear();
+      let months = now.getMonth() - startDate.getMonth();
       let days = now.getDate() - startDate.getDate();
+
       if (days < 0) {
         months--;
         const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
         days += lastMonth.getDate();
       }
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
 
-      // Atualiza o contador no HTML
-      document.getElementById("months-days").textContent = `${months} meses e ${days} dias`;
+      document.getElementById("years-months").textContent = `${years} anos e ${months} meses`;
       document.getElementById("days").textContent = `${totalDays} dias`;
       document.getElementById("hours").textContent = `${totalHours} horas`;
       document.getElementById("minutes").textContent = `${totalMinutes} minutos`;
       document.getElementById("seconds").textContent = `${totalSeconds} segundos`;
     }
 
-    // Atualiza o contador a cada segundo
-    setInterval(calculateTime, 1000);
+    // Atualiza ambos os contadores a cada segundo
+    setInterval(() => {
+      calculateLifeTime();
+      calculateLoveTime();
+    }, 1000);
   </script>
 </body>
 </html>
