@@ -23,14 +23,32 @@
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       margin-top: 20px;
+      position: relative;
     }
 
     h2 {
       font-family: 'Poppins', sans-serif;
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin-top: 20px;
+      position: relative;
+    }
+
+    .heart {
+      font-size: 2rem;
+      color: #ff6b6b;
+      animation: float 3s ease-in-out infinite;
+      position: absolute;
+      opacity: 0.7;
+    }
+
+    .heart:nth-child(odd) {
+      animation-duration: 3.5s;
+    }
+
+    .heart:nth-child(even) {
+      animation-duration: 4s;
     }
 
     .heart-animation {
@@ -54,25 +72,12 @@
       }
     }
 
-    .heart {
-      font-size: 2rem;
-      color: #ff6b6b;
-      animation: float 3s ease-in-out infinite;
-      position: absolute;
-      opacity: 0.7;
-    }
-
-    .heart:nth-child(2) { left: 20%; animation-duration: 3.5s; }
-    .heart:nth-child(3) { left: 40%; animation-duration: 4s; }
-    .heart:nth-child(4) { left: 60%; animation-duration: 4.5s; }
-    .heart:nth-child(5) { left: 80%; animation-duration: 5s; }
-    .heart:nth-child(6) { left: 90%; animation-duration: 5.5s; }
-
     .gallery img {
       width: 100%;
       height: auto;
       border-radius: 10px;
       margin-bottom: 15px;
+      position: relative;
     }
 
     .gallery p {
@@ -82,12 +87,14 @@
       font-size: 1.2rem;
       color: #fff;
       text-align: left;
+      position: relative;
     }
 
     .message {
       font-size: 1.2rem;
       margin: 20px 0;
       line-height: 1.5;
+      position: relative;
     }
 
     .btn-surprise {
@@ -111,16 +118,30 @@
       border-radius: 10px;
       margin-bottom: 30px;
       line-height: 1.6;
+      position: relative;
     }
 
     video {
       max-width: 100%;
       margin-bottom: 20px;
+      position: relative;
+    }
+
+    .video-legend {
+      font-size: 1.2rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+      margin-top: -15px;
+      position: relative;
+      display: inline-block;
     }
 
     footer {
       margin-top: 50px;
       font-size: 1rem;
+      position: relative;
     }
 
     @media (max-width: 768px) {
@@ -149,14 +170,14 @@
     <i class="fas fa-pause"></i>
   </button>
 
-  <!-- Animação de Corações Flutuantes -->
+  <!-- Corações em cada seção -->
   <div class="heart-animation">
-    <i class="fas fa-heart heart" style="top: 10%;"></i>
-    <i class="fas fa-heart heart" style="top: 20%;"></i>
-    <i class="fas fa-heart heart" style="top: 30%;"></i>
-    <i class="fas fa-heart heart" style="top: 40%;"></i>
-    <i class="fas fa-heart heart" style="top: 50%;"></i>
-    <i class="fas fa-heart heart" style="top: 60%;"></i>
+    <i class="fas fa-heart heart" style="top: 10%; left: 10%;"></i>
+    <i class="fas fa-heart heart" style="top: 20%; left: 30%;"></i>
+    <i class="fas fa-heart heart" style="top: 30%; left: 50%;"></i>
+    <i class="fas fa-heart heart" style="top: 40%; left: 70%;"></i>
+    <i class="fas fa-heart heart" style="top: 50%; left: 90%;"></i>
+    <i class="fas fa-heart heart" style="top: 60%; left: 20%;"></i>
   </div>
 
   <!-- Declaração de Amor -->
@@ -165,10 +186,14 @@
     <div class="declaration">
       <p>Oi Julia Yukari Kuriama,</p>
       <p>Hoje, no seu aniversário, quero te dizer o quanto você significa para mim. Desde o primeiro momento que te conheci, você iluminou minha vida de uma maneira que nunca imaginei ser possível. Cada sorriso seu, cada olhar, cada abraço me faz sentir o homem mais sortudo do mundo. Esta surpresa é apenas uma pequena maneira de te mostrar o quanto te amo e aprecio cada momento ao seu lado.</p>
-      <p>Que esse dia seja tão especial quanto você é para mim. Feliz aniversário, e que venham muitos mais momentos lindos juntos!</p>
+      <p>É meio estranho pensar que você ta fazendo 18 anos, te conheci com 13<p>
+      <p>É meio engraçado pensar que aquela garotinha virou esse mulherão, eu realmente sou muito apaixonado por você e to feliz de você estar completando mais um ano, quero viver mais 18, ou 36 e tantos mais anos com você.</p>
+      </p>Muito obrigado por existir na minha vida, muito obrigado por tudo, obrigado por estar comigo, obrigado por não desistir de mim.
+      </p>Você é uma pessoa extremamente importante pra mim e quero que saiba disso!</p>
       <p>Com todo o meu amor,</p>
       <p>O teco do seu tico</p>
     </div>
+    <i class="fas fa-heart heart" style="top: 0; left: 45%;"></i>
   </div>
 
   <!-- Galeria de Fotos -->
@@ -183,6 +208,7 @@
     <p>Foi a última vez que você quis sair pra fazer algo diferente, morri de passar mal depois, mas valeu a pena.</p>
     <img src="vasco.jpeg" alt="Vasco!">
     <p>Foi um dos melhores presentes que já ganhei, te amo demais!</p>
+    <i class="fas fa-heart heart" style="top: 0; left: 50%;"></i>
   </div>
 
   <!-- Vídeos Surpresa -->
@@ -192,19 +218,25 @@
       <source src="video.mp4" type="video/mp4">
       Seu navegador não suporta vídeos.
     </video>
-    <p>Nosso primeiro vídeo especial juntos!</p>
+    <div class="video-legend">KKKKKKKKKKKKKKKKKKKKKKKkk</div>
 
+     <video controls>
+      <source src="balanco.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos.
+       
     <video controls>
       <source src="onibus.mp4" type="video/mp4">
       Seu navegador não suporta vídeos.
     </video>
-    <p>Você no ônibus, cheia de graça!</p>
-
+    <div class="video-legend">Esse vídeo é muito especial</div>
+        
     <video controls>
       <source src="shopping.mp4" type="video/mp4">
       Seu navegador não suporta vídeos.
     </video>
-    <p>Nos divertindo no shopping como sempre!</p>
+       
+    <div class="video-legend">Eu falando bobagem e vc querendo me bater</div>
+    <i class="fas fa-heart heart" style="top: 0; left: 40%;"></i>
   </div>
 
   <!-- Botão para Mensagem Final -->
@@ -212,6 +244,7 @@
     <button class="btn-surprise" onclick="window.location.href='mensagem-final.html'">
       Veja a surpresa final!
     </button>
+    <i class="fas fa-heart heart" style="top: 0; left: 55%;"></i>
   </div>
 
   <!-- Footer -->
