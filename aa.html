@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Aniversário!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #fbc2eb, #a18cd1);
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      padding: 50px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      margin-top: 20px;
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+
+    .heart-animation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .heart {
+      font-size: 3rem;
+      color: #ff6b6b;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+
+    .btn-surprise {
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-surprise:hover {
+      background-color: #d45d5d;
+    }
+
+    .declaration {
+      font-size: 1.2rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    video {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .declaration {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música Romântica de Fundo -->
+  <audio id="romantic-audio" loop autoplay>
+    <source src="your-audio-file.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+  <button id="toggle-music" class="btn btn-light" style="position: fixed; top: 20px; right: 20px;">
+    <i class="fas fa-pause"></i>
+  </button>
+
+  <!-- Animação de Corações Flutuantes -->
+  <div class="heart-animation">
+    <i class="fas fa-heart heart" style="top: 10%; left: 10%;"></i>
+    <i class="fas fa-heart heart" style="top: 20%; left: 30%;"></i>
+    <i class="fas fa-heart heart" style="top: 30%; left: 50%;"></i>
+    <i class="fas fa-heart heart" style="top: 40%; left: 70%;"></i>
+    <i class="fas fa-heart heart" style="top: 50%; left: 90%;"></i>
+  </div>
+
+  <!-- Declaração de Amor -->
+  <div class="container" data-aos="fade-up">
+    <h1>Feliz Aniversário, Meu Amor <3</h1>
+    <div class="declaration">
+      <p>Oi Julia Yukari Kuriama,</p>
+      <p>Hoje, no seu aniversário, quero te dizer o quanto você significa para mim. Desde o primeiro momento que te conheci, você iluminou minha vida de uma maneira que nunca imaginei ser possível. Cada sorriso seu, cada olhar, cada abraço me faz sentir o homem mais sortudo do mundo. Esta surpresa é apenas uma pequena maneira de te mostrar o quanto te amo e aprecio cada momento ao seu lado.</p>
+      <p>Que esse dia seja tão especial quanto você é para mim. Feliz aniversário, e que venham muitos mais momentos lindos juntos!</p>
+      <p>Com todo o meu amor,</p>
+      <p>O teco do seu tico</p>
+    </div>
+  </div>
+
+  <!-- Galeria de Fotos -->
+  <div class="container gallery" data-aos="zoom-in">
+    <img src="https://photos.google.com/u/3/search/_m8_Favoritas/photo/AF1QipMyJNFkuIXMrIBs-WbsLWGIA9N8u-thaPPrsfps" alt="Lembrança 1">
+    <p>Lembrança de um dia especial...</p>
+    <img src="photo2.jpg" alt="Lembrança 2">
+    <p>Mais um momento inesquecível...</p>
+  </div>
+
+  <!-- Vídeos Surpresa -->
+  <div class="container" data-aos="fade-up">
+    <h2>Surpresa em Vídeo</h2>
+    <video controls>
+      <source src="your-video-file1.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos.
+    </video>
+    <video controls>
+      <source src="your-video-file2.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos.
+    </video>
+    <!-- Adicione mais vídeos conforme necessário -->
+  </div>
+
+  <!-- Botão para Mensagem Final -->
+  <div class="container" data-aos="fade-up">
+    <button class="btn-surprise" onclick="window.location.href='mensagem-final.html'">
+      Veja a surpresa final!
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Com amor, de Kauan Yuri</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Controle de Música
+    const audio = document.getElementById('romantic-audio');
+    const toggleMusicBtn = document.getElementById('toggle-music');
+    let isPlaying = true;
+
+    toggleMusicBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        toggleMusicBtn.innerHTML = '<i class="fas fa-play"></i>';
+      } else {
+        audio.play();
+        toggleMusicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+</body>
+</html>
