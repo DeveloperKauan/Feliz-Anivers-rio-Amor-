@@ -14,6 +14,7 @@
       background: linear-gradient(to bottom, #fbc2eb, #a18cd1);
       color: #fff;
       text-align: center;
+      overflow-x: hidden;
     }
 
     .container {
@@ -38,7 +39,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: -1;
-      opacity: 0.7;
+      opacity: 0.5;
     }
 
     @keyframes float {
@@ -54,16 +55,33 @@
     }
 
     .heart {
-      font-size: 3rem;
+      font-size: 2rem;
       color: #ff6b6b;
-      animation: float 2s ease-in-out infinite;
+      animation: float 3s ease-in-out infinite;
+      position: absolute;
+      opacity: 0.7;
     }
+
+    .heart:nth-child(2) { left: 20%; animation-duration: 3.5s; }
+    .heart:nth-child(3) { left: 40%; animation-duration: 4s; }
+    .heart:nth-child(4) { left: 60%; animation-duration: 4.5s; }
+    .heart:nth-child(5) { left: 80%; animation-duration: 5s; }
+    .heart:nth-child(6) { left: 90%; animation-duration: 5.5s; }
 
     .gallery img {
       width: 100%;
       height: auto;
       border-radius: 10px;
       margin-bottom: 15px;
+    }
+
+    .gallery p {
+      background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para facilitar a leitura */
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      color: #fff;
+      text-align: left;
     }
 
     .message {
@@ -133,11 +151,12 @@
 
   <!-- Animação de Corações Flutuantes -->
   <div class="heart-animation">
-    <i class="fas fa-heart heart" style="top: 10%; left: 10%;"></i>
-    <i class="fas fa-heart heart" style="top: 20%; left: 30%;"></i>
-    <i class="fas fa-heart heart" style="top: 30%; left: 50%;"></i>
-    <i class="fas fa-heart heart" style="top: 40%; left: 70%;"></i>
-    <i class="fas fa-heart heart" style="top: 50%; left: 90%;"></i>
+    <i class="fas fa-heart heart" style="top: 10%;"></i>
+    <i class="fas fa-heart heart" style="top: 20%;"></i>
+    <i class="fas fa-heart heart" style="top: 30%;"></i>
+    <i class="fas fa-heart heart" style="top: 40%;"></i>
+    <i class="fas fa-heart heart" style="top: 50%;"></i>
+    <i class="fas fa-heart heart" style="top: 60%;"></i>
   </div>
 
   <!-- Declaração de Amor -->
@@ -157,13 +176,13 @@
     <img src="aliança.jpeg" alt="Acho que isso é muito importante pra nós">
     <p>Lembro até hoje das maluquices que fiz pra te tirar um sorriso nesse dia...</p>
     <img src="não tem motivo.jpeg" alt="Você tava linda esse dia">
-    <p>Eu gosto muito, foi uma das primeiras vezes que saimos e foi um momento muito legal pra mim, assim como todos</p>
-      <img src="skincare.jpeg" alt="Primeira vez que fizemos algo juntos">
-    <p>Foi a primeira vez que a gente fez algo completamente atoa e de namorados, vc me cuidou esse dia me senti amado</p>
-      <img src="comer.jpeg" alt="Ultima vez...">
-    <p>Foi a última vez que você quis sair pra fazer algo diferente, morri de passar mal depois, mas valeu a pena</p>
-      <img src="vasco.jpeg" alt="Vasco!">
-    <p>Foi um dos melhores presentes que já ganhei, te amo demais</p>
+    <p>Eu gosto muito, foi uma das primeiras vezes que saímos e foi um momento muito legal pra mim, assim como todos</p>
+    <img src="skincare.jpeg" alt="Primeira vez que fizemos algo juntos">
+    <p>Foi a primeira vez que a gente fez algo completamente atoa e de namorados, você me cuidou esse dia e me senti amado.</p>
+    <img src="comer.jpeg" alt="Ultima vez...">
+    <p>Foi a última vez que você quis sair pra fazer algo diferente, morri de passar mal depois, mas valeu a pena.</p>
+    <img src="vasco.jpeg" alt="Vasco!">
+    <p>Foi um dos melhores presentes que já ganhei, te amo demais!</p>
   </div>
 
   <!-- Vídeos Surpresa -->
@@ -173,15 +192,19 @@
       <source src="video.mp4" type="video/mp4">
       Seu navegador não suporta vídeos.
     </video>
+    <p>Nosso primeiro vídeo especial juntos!</p>
+
     <video controls>
       <source src="onibus.mp4" type="video/mp4">
       Seu navegador não suporta vídeos.
     </video>
-    <!-- Adicione mais vídeos conforme necessário -->
-       <video controls>
+    <p>Você no ônibus, cheia de graça!</p>
+
+    <video controls>
       <source src="shopping.mp4" type="video/mp4">
       Seu navegador não suporta vídeos.
     </video>
+    <p>Nos divertindo no shopping como sempre!</p>
   </div>
 
   <!-- Botão para Mensagem Final -->
